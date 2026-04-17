@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
+
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --color-bg: #0d0d0d;
+  --color-bg-2: #141417;
+  --color-bg-3: #1c1c21;
+  --color-border: #2a2a32;
+  --color-text: #ffffff;
+  --color-text-2: #a0a0a0;
+  --color-text-3: #444444;
+  --color-accent: #ff4500;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-doto: "Doto", Georgia, serif;
+}
+@layer base {
+  :root {
+    --bg: #0d0d0d;
+    --bg-2: #141417;
+    --bg-3: #1c1c21;
+    --border: #2a2a32;
+    --text: #ffffff;
+    --text-2: #a0a0a0;
+    --text-3: #444444;
+    --accent: #ff4500;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    margin: 0;
+    color: var(--text);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* Custom Cursor */
+  #cursor {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@layer components {
+  nav.scrolled {
+    border-bottom-color: var(--border);
+    background: rgba(13, 13, 13, 0.85);
+  }
+  /* Avatar Frame (complex shape) */
+  .avatar-frame {
+    width: 320px;
+    height: 380px;
+    border-radius: 180px 180px 140px 140px;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .avatar-head {
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    top: 72px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  /* Chips (variant styles) */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border: 1px solid transparent;
+    transition:
+      opacity 0.2s,
+      transform 0.15s;
+    cursor: default;
+  }
+  .chip:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+  }
+  .chip-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Chip variants (preserved from original) */
+  .chip-react {
+    background: #0e2035;
+    color: #61b3f5;
+    border-color: #1c3d5e;
+  }
+  .chip-react .chip-dot {
+    background: #61b3f5;
+  }
+  .chip-ts {
+    background: #0d1e30;
+    color: #5ba3e8;
+    border-color: #152d48;
+  }
+  .chip-ts .chip-dot {
+    background: #5ba3f5;
+  }
+  .chip-next {
+    background: #141414;
+    color: #d4d4d4;
+    border-color: #2a2a2a;
+  }
+  .chip-next .chip-dot {
+    background: #d4d4d4;
+  }
+  .chip-css {
+    background: #1c0f2a;
+    color: #c084fc;
+    border-color: #2e1a3e;
+  }
+  .chip-css .chip-dot {
+    background: #c084fc;
+  }
+  .chip-tailwind {
+    background: #082820;
+    color: #34d3b0;
+    border-color: #0d3d30;
+  }
+  .chip-tailwind .chip-dot {
+    background: #34d3b0;
+  }
+  .chip-node {
+    background: #0d2016;
+    color: #6ac47e;
+    border-color: #153020;
+  }
+  .chip-node .chip-dot {
+    background: #6ac47e;
+  }
+  .chip-python {
+    background: #1e1c08;
+    color: #e8d44d;
+    border-color: #2e2a10;
+  }
+  .chip-python .chip-dot {
+    background: #e8d44d;
+  }
+  .chip-express {
+    background: #141414;
+    color: #aaa;
+    border-color: #252525;
+  }
+  .chip-express .chip-dot {
+    background: #aaa;
+  }
+  .chip-fastapi {
+    background: #082420;
+    color: #2dd4bf;
+    border-color: #0e3530;
+  }
+  .chip-fastapi .chip-dot {
+    background: #2dd4bf;
+  }
+  .chip-graphql {
+    background: #210e21;
+    color: #e535ab;
+    border-color: #3a1238;
+  }
+  .chip-graphql .chip-dot {
+    background: #e535ab;
+  }
+  .chip-rest {
+    background: #131320;
+    color: #8f94fb;
+    border-color: #1f1f35;
+  }
+  .chip-rest .chip-dot {
+    background: #8f94fb;
+  }
+  .chip-postgres {
+    background: #091a2a;
+    color: #4c9ef8;
+    border-color: #12283e;
+  }
+  .chip-postgres .chip-dot {
+    background: #4c9ef8;
+  }
+  .chip-mongo {
+    background: #082015;
+    color: #4db56a;
+    border-color: #0e3022;
+  }
+  .chip-mongo .chip-dot {
+    background: #4db56a;
+  }
+  .chip-redis {
+    background: #200c0c;
+    color: #f06060;
+    border-color: #321212;
+  }
+  .chip-redis .chip-dot {
+    background: #f06060;
+  }
+  .chip-prisma {
+    background: #081820;
+    color: #5eead4;
+    border-color: #0f2a35;
+  }
+  .chip-prisma .chip-dot {
+    background: #5eead4;
+  }
+  .chip-aws {
+    background: #201400;
+    color: #ff9900;
+    border-color: #342000;
+  }
+  .chip-aws .chip-dot {
+    background: #ff9900;
+  }
+  .chip-docker {
+    background: #041824;
+    color: #2496ed;
+    border-color: #082a3c;
+  }
+  .chip-docker .chip-dot {
+    background: #2496ed;
+  }
+  .chip-cicd {
+    background: #0f1422;
+    color: #7c83ed;
+    border-color: #1a1e35;
+  }
+  .chip-cicd .chip-dot {
+    background: #7c83ed;
+  }
+  .chip-linux {
+    background: #181408;
+    color: #f0c040;
+    border-color: #282010;
+  }
+  .chip-linux .chip-dot {
+    background: #f0c040;
+  }
+  .chip-terraform {
+    background: #13082a;
+    color: #a855f7;
+    border-color: #1f0d40;
+  }
+  .chip-terraform .chip-dot {
+    background: #a855f7;
+  }
+  .chip-ws {
+    background: #071520;
+    color: #38bdf8;
+    border-color: #0d2232;
+  }
+  .chip-ws .chip-dot {
+    background: #38bdf8;
+  }
+  .chip-oss {
+    background: #082018;
+    color: #34d399;
+    border-color: #0e3025;
+  }
+  .chip-oss .chip-dot {
+    background: #34d399;
+  }
+
+  /* Timeline Dot */
+  .timeline-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    left: -28px;
+    top: 8px;
+  }
+
+  /* Scroll Reveal Animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  /* Additional custom utilities if needed */
+  .animate-fade-up {
+    animation: fadeUp 0.7s forwards;
+  }
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
