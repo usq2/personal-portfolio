@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ReactLogo from "../icons/react";
-import Chip from "../chip";
 import Tile from "../tiles";
 import TSLogo from "../icons/ts";
 import CSSLogo from "../icons/css";
@@ -20,6 +19,7 @@ import DockerLogo from "../icons/docker";
 import CICDLogo from "../icons/cicd";
 import ObserveLogo from "../icons/observability";
 import OpenSearchLogo from "../icons/opensearch";
+
 export default function Skills() {
   const [frontendBtn, setFrontendBtn] = useState(true);
   const [backendBtn, setBackendBtn] = useState(false);
