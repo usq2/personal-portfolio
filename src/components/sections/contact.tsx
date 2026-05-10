@@ -19,7 +19,7 @@ export default function Contact() {
         href="mailto:utkarsh1si16is060@gmail.com"
         className="contact-email inline-block font-serif text-[clamp(1.4rem,3vw,2.2rem)] text-text no-underline my-7 pb-1 border-b border-border transition-all hover:text-accent hover:border-accent "
       >
-        utkarsh1si16is060@gmail.com
+        utkarsh.sahay.work@gmail.com
       </a>
       <div className="social-links flex justify-center gap-6 mt-9 flex-wrap ">
         <a
