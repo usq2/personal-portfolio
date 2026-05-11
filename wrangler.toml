@@ -1,3 +1,7 @@
+name = "your-name-portfolio"
+compatibility_date = "2026-05-11"
+[assets]
+directory = "./dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "personal-portfolio"
